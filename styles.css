@@ -1,0 +1,360 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #2C3E50; /* Dark blue */
+    color: #2980b9;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+header img.profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+/* Profile photo container for positioning */
+.profile-photo-container {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+
+/* Profile photo styles */
+.profile-photo {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Smooth scaling on hover */
+}
+
+
+header .contact-info {
+    margin: 20px 0;
+}
+
+header a {
+    color: #e8491d; /* Orange accent */
+    text-decoration: none;
+}
+
+.download-btn {
+    padding: 10px 20px;
+    background-color: #3498db; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+/* Navigation */
+nav {
+    background: #34495e; /* Slightly lighter blue */
+    padding: 10px 0;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.navigation li {
+    margin: 0 15px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Content */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: white; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #3498db; /* Blue underline */
+    padding-bottom: 5px;
+}
+
+/* Project and Experience Cards */
+.project-card, .experience-card {
+    background: #ecf0f1; /* Light grey */
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover, .experience-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1c1c1c; /* Dark background */
+    color: #f4f4f4; /* Light text */
+}
+
+body.dark-mode header {
+    background-color: #2C3E50; /* Maintain dark blue header */
+}
+
+body.dark-mode a {
+    color: #6ebff5; /* Blue links in dark mode */
+}
+
+body.dark-mode p, body.dark-mode h1 {
+    color: aliceblue
+}
+
+body.dark-mode div.container, body.dark-mode section {
+    background-color: #2C3E50;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .experience-card {
+    background: #34495e; /* Darker grey */
+    color: #f4f4f4;
+}
+
+.container.dark-mode {
+    background-color: #1c1c1c;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    header img.profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skill {
+    text-align: center;
+    margin: 15px;
+}
+
+.skill-logo {
+    width: 60px; /* Adjust size as necessary */
+    height: 60px; /* Adjust size as necessary */
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.skill-logo:hover {
+    transform: scale(1.1); /* Slightly enlarges logo on hover */
+}
+
+
+/* Profile photo container */
+.profile-photo-container {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 4px solid transparent; /* Hidden border initially */
+    border-radius: 50%;
+    overflow: hidden; /* To keep the photo and overlay within the circle */
+    transition: border-color 0.4s ease-in-out; /* Border reveal animation */
+}
+
+/* Profile photo styles */
+.profile-photo {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out; /* Smooth scaling */
+}
+
+/* Overlay effect (invisible until hover) */
+.profile-photo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 102, 204, 0.2); /* Blue overlay with transparency */
+    opacity: 0; /* Invisible initially */
+    transition: opacity 0.4s ease-in-out; /* Fade in the overlay */
+    border-radius: 50%;
+}
+
+/* Hover effect for the profile photo */
+.profile-photo-container:hover {
+    border-color: #0066cc; /* Blue border reveal on hover */
+}
+
+.profile-photo-container:hover .profile-photo {
+    transform: scale(0.9); /* Zoom-out effect */
+}
+
+.profile-photo-container:hover::before {
+    opacity: 1; /* Show the blue overlay */
+}
+
+
+/* Initial style for h1 */
+h1 {
+    font-size: 2em; /* Adjust the size as needed */
+    color: #003366; /* Initial dark blue color */
+    position: relative; /* For absolute positioning of the shadow */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Shadow effect (initially hidden) */
+h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px; /* Position it slightly below the text */
+    height: 4px; /* Thickness of the shadow */
+    background-color: rgba(0, 161, 228, 0.6); /* Light blue shadow */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth reveal and movement */
+}
+
+/* Wave animation keyframes */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px); /* Move up */
+    }
+    50% {
+        transform: translateY(5px); /* Move down */
+    }
+    75% {
+        transform: translateY(-3px); /* Move up again */
+    }
+}
+
+/* Hover effect for h1 */
+h1:hover {
+    color: #00A1E4; /* Light blue transition on hover */
+    animation: wave 0.6s ease; /* Wave animation on hover */
+}
+
+h1:hover::before {
+    opacity: 1; /* Show the shadow */
+    transform: translateY(5px); /* Lift the shadow slightly */
+}
+.project-card {
+    margin: 20px 0; /* Space between project cards */
+    background-color: #f9f9f9; /* Light background for each project card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the card */
+}
+
+.project-description {
+    margin-bottom: 15px; /* Space below the description */
+}
+
+/* Image section for displaying images side by side */
+.project-images {
+    display: flex; /* Use flexbox to align images */
+    justify-content: space-between; /* Space between images */
+    margin-bottom: 15px; /* Space between images and links */
+}
+
+.project-image {
+    width: calc(50% - 10px); /* Two images side by side */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Rounded corners for images */
+    margin: 5px; /* Space between images */
+    object-fit: cover; /* Ensure the images cover the area without distortion */
+}
+
+/* Links styling */
+.project-links {
+    display: flex; /* Flexbox to align links horizontally */
+    gap: 20px; /* Space between the links */
+}
+
+.project-link {
+    text-decoration: none; /* Remove underline */
+    color: #0066cc; /* Blue color for links */
+    font-weight: bold; /* Bold font for links */
+    border: 2px solid #0066cc; /* Border around the link */
+    padding: 10px 15px; /* Padding inside the link */
+    border-radius: 5px; /* Rounded corners for the links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.project-link:hover {
+    background-color: #0066cc; /* Blue background on hover */
+    color: #fff; /* White text on hover */
+}
+/* Project title and logo layout */
+.project-title {
+    display: flex; /* Flexbox to align items in a row */
+    justify-content: space-between; /* Pushes the logo to the far right */
+    align-items: center; /* Vertically center the title and logo */
+    margin-bottom: 10px; /* Space below the project title */
+}
+
+/* Organization logo */
+.organization-logo {
+    width: 100px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 15px; /* Space between the title and logo */
+}
+
+/* Project card styling (for reference) */
+.project-card {
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
